@@ -1,3 +1,4 @@
+import ValidatorRules from "../../shared/domain/validators/validators-rules";
 import { Uuid } from "../../shared/domain/value-objects/uuid.vo";
 
 export type CategoryConstructorProps = {
@@ -34,6 +35,7 @@ export class Category{
   }
 
   changename(name: string): void {
+    ValidatorRules.values(name, 'name').required().string().maxLength(255);
     this.name = name;
   }
 
