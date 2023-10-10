@@ -121,3 +121,11 @@ describe("Category Unit Tests", () => {
     });
   });
 });
+
+describe('Category validator', () => {
+  describe('create command', () => {
+    Category.create({
+      name: null
+    })
+  })
+})
